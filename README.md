@@ -55,6 +55,38 @@ insertData(
     $connection
 );
 ```
+#### insertData:
+```php
+
+```
+#### insertData:
+```php
+
+```
+#### insertData:
+```php
+
+```
+#### insertData:
+```php
+
+```
+#### insertData:
+```php
+
+```
+#### insertData:
+```php
+
+```
+#### insertData:
+```php
+
+```
+#### insertData:
+```php
+
+```
 
 
 <br />
