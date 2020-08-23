@@ -40,21 +40,19 @@ a php functions library that helps you to write code effieciently, it helps you 
 <br />
 
 ### How To Use:
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+#### insertData:
+insertData(
+    "table_name",
+    array(
+        "Name",
+        "Email"
+        ),
+    array(
+        "Oreo",
+        "shaxad.here@gmail.com"
+    ),
+    $connection
+);
 
 
 <br />
