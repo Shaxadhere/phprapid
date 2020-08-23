@@ -1,8 +1,8 @@
-### [PHP Rapid][url]
+## [PHP Rapid][url]
 a php functions library that helps you to write code effieciently, it helps you perform database operations, validation and some other cool stuff by just calling functions.
 
 
-### How To Install:
+## How To Install:
 - clone the repository.
 - copy it somewhere inside your application.
 - include rapid.php in your application's root or wherever you want to call methods.
@@ -10,8 +10,9 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 <br />
 
-### Methods:
-#### SQL
+## Methods:
+
+- #### SQL
 - insertData(table, fields, values, conn)
 - fetchData(table, conn)
 - fetchDataById(table, PrimaryKey, id, conn)
