@@ -90,15 +90,6 @@ function editData(string $table, array $data, string $PrimaryKey, $id, $conn){
     mysqli_query($conn, $query);
 }
 
-//Filter User//
-function filterUserById($id, $PrimaryKey, $conn){
-    $res = mysqli_query($conn, "select * from tbl_user where $PrimaryKey = $id");
-    if (!$res) {
-        printf("Error: %s\n", mysqli_error($conn));
-        exit();
-    }
-    return mysqli_fetch_array($res);
-}
 
 //Check if same value already exists//
 function checkExistance($table, $column_name, $value, $conn){

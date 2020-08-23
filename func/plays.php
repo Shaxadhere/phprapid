@@ -31,8 +31,8 @@ function getHeader(string $pageName, string $headerPath)
 }
 
 //this method adds footer//
-function getFooter(string $link){
-    include($link);
+function getFooter(string $footerPath){
+    include($footerPath);
 }
 
 //this method redirects page with javascript//
