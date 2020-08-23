@@ -41,6 +41,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 ### How To Use:
 #### insertData:
+this method wont return any value it will just insert the data.
 ```php
 insertData(
     "table_name",
