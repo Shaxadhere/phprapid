@@ -11,7 +11,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 <br />
 
 ### Methods:
-## SQL
+#### SQL
 - insertData(table, fields, values, conn)
 - fetchData(table, conn)
 - fetchDataById(table, PrimaryKey, id, conn)
