@@ -41,6 +41,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 ### How To Use:
 #### insertData:
+```php
 insertData(
     "table_name",
     array(
@@ -53,6 +54,7 @@ insertData(
     ),
     $connection
 );
+```
 
 
 <br />
