@@ -104,7 +104,7 @@ checkExistance(
     $connection
 );
 ```
-#### insertData:
+#### getLastRow:
 ```php
 getLastRow(
     "table_name",
@@ -112,15 +112,77 @@ getLastRow(
     $connection
 );
 ```
-#### insertData:
+#### validateDate:
 ```php
-
+validateDate(
+    "2020-02-20",
+    "-"
+);
 ```
-#### insertData:
+#### validatePassword:
 ```php
-
+validatePassword(
+    "input"
+);
 ```
-
+#### validateUsername:
+```php
+validateUsername(
+    "input"
+);
+```
+#### validatePlainText:
+```php
+validatePlainText(
+    "input"
+);
+```
+#### validateAlphanumeric:
+```php
+validateAlphanumeric(
+    "input"
+);
+```
+#### validateEmail:
+```php
+validateEmail(
+    "input"
+);
+```
+#### clean_text:
+```php
+clean_text(
+    "input"
+);
+```
+#### random_strings:
+```php
+random_strings(20);
+```
+#### getNextDays:
+```php
+getNextDays(10);
+```
+#### calcMonths:
+```php
+calcMonths("date1", "date2");
+```
+#### getHeader:
+```php
+getHeader("any page name", "header file path");
+```
+#### getFooter:
+```php
+getFooter("footer file path");
+```
+#### redirectWindow:
+```php
+redirectWindow("url");
+```
+#### showAlert:
+```php
+showAlert("some text");
+```
 
 <br />
 
