@@ -100,10 +100,10 @@ function checkExistance($table, $column_name, $value, $conn){
     }
     $num = mysqli_fetch_array($res);
     if($num[0] == 0){
-        return true;
+        return false;
     }
     else{
-        return false;
+        return true;
     }
 }
 

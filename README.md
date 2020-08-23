@@ -57,6 +57,7 @@ insertData(
 );
 ```
 #### fetchData:
+this method will return mysqli_query result, you can handle it that way.
 ```php
 fetchData(
     "table_name",
@@ -64,6 +65,7 @@ fetchData(
 );
 ```
 #### fetchDataById:
+this method will return mysqli_query result, you can handle it that way.
 ```php
 fetchDataById(
     "table_name",
@@ -73,6 +75,7 @@ fetchDataById(
 );
 ```
 #### deleteDataById:
+this method wont return any value it will just insert the data.
 ```php
 deleteDataById(
     "table_name",
@@ -82,6 +85,7 @@ deleteDataById(
 );
 ```
 #### editData:
+this method wont return any value it will just insert the data.
 ```php
 editData(
     "table_name",
@@ -97,6 +101,7 @@ editData(
 );
 ```
 #### checkExistance:
+this method will return true if the value exists or else it will return false.
 ```php
 checkExistance(
     "table_name",
@@ -106,6 +111,7 @@ checkExistance(
 );
 ```
 #### getLastRow:
+this method will return mysqli_query result, you can handle it that way.
 ```php
 getLastRow(
     "table_name",
@@ -114,6 +120,7 @@ getLastRow(
 );
 ```
 #### validateDate:
+this method will return true if the provided date is correct or else it wil return false.
 ```php
 validateDate(
     "2020-02-20",
@@ -121,66 +128,79 @@ validateDate(
 );
 ```
 #### validatePassword:
+this method will check if the password's length is between 8 to 32 and furthur it will check if the password matches at least three of four scenarios which are 1) have at least one symbol 2) have at least one small letter 3) have at least one capital letter 4) have at least one number or else it will return false.
 ```php
 validatePassword(
     "input"
 );
 ```
 #### validateUsername:
+this method will check username according to twitter and instagram standard usernames if the username is correct this will return true or else it will return false.
 ```php
 validateUsername(
     "input"
 );
 ```
 #### validatePlainText:
+this method will return true if the input is plain text or else it will return false.
 ```php
 validatePlainText(
     "input"
 );
 ```
 #### validateAlphanumeric:
+this method will return true if the input is alphanumeric or else it will return false.
 ```php
 validateAlphanumeric(
     "input"
 );
 ```
 #### validateEmail:
+this method will return true if the input is correct email or else it will return false.
 ```php
 validateEmail(
     "input"
 );
 ```
 #### clean_text:
+this method will remove any useless white spaces in text and make the text clean.
 ```php
 clean_text(
     "input"
 );
 ```
 #### random_strings:
+this method will generate random string with combination of caps and small letters and digits of provided length.
 ```php
 random_strings(20);
 ```
 #### getNextDays:
+this method will return complete dates of number of days provided after todays date in array.
 ```php
 getNextDays(10);
 ```
 #### calcMonths:
+this method will count months between two days.
 ```php
 calcMonths("date1", "date2");
 ```
 #### getHeader:
+this method will buffer page name and header everytime the page reloads.
 ```php
 getHeader("any page name", "header file path");
 ```
 #### getFooter:
+this method will load footer file.
 ```php
 getFooter("footer file path");
 ```
 #### redirectWindow:
+this method will redirect pages with javascript.
 ```php
 redirectWindow("url");
 ```
 #### showAlert:
+this method will show alerts with javascript.
 ```php
 showAlert("some text");
 ```
