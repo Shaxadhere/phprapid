@@ -45,39 +45,72 @@ a php functions library that helps you to write code effieciently, it helps you 
 insertData(
     "table_name",
     array(
-        "Name",
-        "Email"
+        "column1_name",
+        "column2_name"
         ),
     array(
-        "Oreo",
-        "shaxad.here@gmail.com"
+        "value1",
+        "value2"
     ),
+    $connection
+);
+```
+#### fetchData:
+```php
+fetchData(
+    "table_name",
+    $connection
+);
+```
+#### fetchDataById:
+```php
+fetchDataById(
+    "table_name",
+    "primary_key_column_name",
+    $primary_key_value,
+    $connection
+);
+```
+#### deleteDataById:
+```php
+deleteDataById(
+    "table_name",
+    "primary_key_column_name",
+    $primary_key_value,
+    $connection
+);
+```
+#### editData:
+```php
+editData(
+    "table_name",
+    array(
+        "column_name",
+        "value",
+        "column_name",
+        "value"
+    ),
+    "primary_key_column_name",
+    $primary_key_value,
+    $connection
+);
+```
+#### checkExistance:
+```php
+checkExistance(
+    "table_name",
+    "column_name",
+    "value",
     $connection
 );
 ```
 #### insertData:
 ```php
-
-```
-#### insertData:
-```php
-
-```
-#### insertData:
-```php
-
-```
-#### insertData:
-```php
-
-```
-#### insertData:
-```php
-
-```
-#### insertData:
-```php
-
+getLastRow(
+    "table_name",
+    "primary_key_column_name",
+    $connection
+);
 ```
 #### insertData:
 ```php
