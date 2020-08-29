@@ -12,6 +12,10 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 ## Methods:
 
+#### Tracking User
+- :boom: trackIP(ip)
+- :boom: getOS()
+- :boom: getBrowser()
 #### SQL
 - insertData(table, fields, values, conn)
 - fetchData(table, conn)
@@ -21,7 +25,8 @@ a php functions library that helps you to write code effieciently, it helps you 
 - checkExistance(table, column_name, value, conn)
 - getLastRow(table, PrimaryKey, conn)
 #### Validation
-- verify_email(email)
+- :boom: verify_email(email)
+- :boom: verify_phone(phone_number)
 - validateDate(date, seperator)
 - validatePassword(password)
 - validateUsername(username)
@@ -41,11 +46,33 @@ a php functions library that helps you to write code effieciently, it helps you 
 <br />
 
 ### How To Use:
-### verify_email:
+
+### :boom: trackIP:
+tracks user's ip address and retrieves information out of it
+```php
+trackIP(ip_address)
+```
+### :boom: getOS:
+gets user's operating system
+```php
+getOS()
+```
+### :boom: getBrowser:
+gets user's browser name
+```php
+getBrowser()
+```
+### :boom: verify_phone:
+verifies phone number and retreives some information out of it
+```php
+verify_email("13654008480")
+```
+### :boom: verify_email:
 verifies if email is true and valid without sending a mail
 ```php
 verify_email("example@website.com")
 ```
+
 #### insertData:
 this method wont return any value it will just insert the data.
 ```php

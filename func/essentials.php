@@ -93,12 +93,12 @@ function calcMonths($start_date, $end_date){
 
 
 /**
- * verifies if email is true and valid without sending a mail
+ * verifies if email is true and valid without sending a mail,
  * api requests are limited, for personal free api token 
  * sign up at https://mailboxlayer.com/signup?plan=71
  * and modify the method by entering your access_key
  *
- * @param Email   $email  expects email in string
+ * @param String   $email  expects email in string
  * 
  * @return Array array(valid_format, smtp_check)
  */ 
@@ -118,16 +118,107 @@ function verify_email($email){
     // Decode JSON response:
     $res = json_decode($json, true);
 
-    // Access and use your preferred validation result objects
-    $res['format_valid'];
-    $res['smtp_check'];
-
     $val = array(
         "valid_format" => $res['format_valid'],
         "smtp_check" => $res['smtp_check']
     );
 
     return $val;
+}
+
+/**
+ * verifies phone number and retreives some information out of it,
+ * api requests are limited, for personal free api token 
+ * sign up at https://numverify.com/signup?plan=17
+ * and modify the method by entering your access_key
+ *
+ * @param String   $phone  expects phone number in string
+ * 
+ * @return Array array(valid, country_code, carrier, country_prefix, country_name, line_type)
+ */ 
+function verify_phone($phone_number){
+    // set API Access Key
+    $access_key = '5e6b9812bc31e10bfd2e202c8da9b6ef';
+
+    // Initialize CURL:
+    $ch = curl_init('http://apilayer.net/api/validate?access_key='.$access_key.'&number='.$phone_number.'');  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    // Store the data:
+    $json = curl_exec($ch);
+    curl_close($ch);
+
+    // Decode JSON response:
+    $res = json_decode($json, true);
+
+    // Access and use your preferred validation result objects
+    $res['valid'];
+    $res['country_code'];
+    $res['carrier'];
+    $res['country_prefix'];
+    $res['country_name'];
+    $res['line_type'];
+
+    $val = array(
+        "valid" => $res['valid'],
+        "country_code" => $res['country_code'],
+        "carrier" => $res['carrier'],
+        "country_prefix" => $res['country_prefix'],
+        "country_name" => $res['country_name'],
+        "line_type" => $res['line_type'],
+    );
+
+    return $val;
+
+}
+
+/**
+ * tracks user's ip address and retrieves information out of it,
+ * api requests are limited, for personal free api token 
+ * sign up at https://ipstack.com/signup/free
+ * and modify the method by entering your access_key
+ *
+ * @param String   $ip  expects ip address in string
+ * 
+ * @return Array array(ip, type, continent_code, continent_name, country_code, country_name, region_code, region_name,
+ * city, zip, latitude, longitude, geoname_id, capital, country_flag_svg, country_flag_emoji, calling_code, is_eu)
+ */ 
+function trackIP($ip){
+    $access_key = '068888c196e341bf792338fadb1fb8c9';
+
+    // Initialize CURL:
+    $ch = curl_init('http://api.ipstack.com/'.$ip.'?access_key='.$access_key.'');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    // Store the data:
+    $json = curl_exec($ch);
+    curl_close($ch);
+
+    // Decode JSON response:
+    $res = json_decode($json, true);
+
+    // Output the "capital" object inside "location"
+    array(
+        "ip" => $res['ip'],
+        "type" => $res['type'],
+        "continent_code" => $res['continent_code'],
+        "continent_name" => $res['continent_name'],
+        "country_code" => $res['country_code'],
+        "country_name" => $res['country_name'],
+        "region_code" => $res['region_code'],
+        "region_name" => $res['region_name'],
+        "city" => $res['city'],
+        "zip" => $res['zip'],
+        "latitude" => $res['latitude'],
+        "longitude" => $res['longitude'],
+        "geoname_id" => $res['location']['geoname_id'],
+        "capital" => $res['location']['capital'],
+        "country_flag_svg" => $res['location']['country_flag'],
+        "country_flag_emoji" => $res['location']['country_flag_emoji'],
+        "calling_code" => $res['location']['calling_code'],
+        "is_eu" => $res['location']['is_eu'],
+    );
+
 }
 
 /**
