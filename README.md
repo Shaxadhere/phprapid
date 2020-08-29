@@ -1,4 +1,4 @@
-[<img align="left" alt="Shexadd | Twitter" src="http://shaxad.com/assets/img/rapid_Original.jpg" style="max-width=16%" />][url]
+[<img align="left" alt="Shexadd | Twitter" src="http://shaxad.com/assets/img/rapid_Original.jpg" width="16%" />][url]
 
 a php functions library that helps you to write code effieciently, it helps you perform database operations, validation, tracking user and some other cool stuff by just calling functions.
 
