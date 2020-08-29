@@ -73,6 +73,9 @@ function calcMonths($start_date, $end_date){
 
 /**
  * verifies if email is true and valid without sending a mail
+ * api requests are limited, for personal free api token 
+ * sign up at https://mailboxlayer.com/signup?plan=71
+ * and modify the method by entering your access_key
  *
  * @param Email   $email  expects email in string
  * 
