@@ -16,7 +16,14 @@
 
 <?php
 
-//this method validates the date just take it as YYY{seperator}MM{Seperator}DD//
+/**
+ * validates date format
+ *
+ * @param String   $date  expects date as YYY{seperator}MM{Seperator}DD
+ * @param String   $seperator  expects date seperator
+ * 
+ * @return Boolean
+ */ 
 function validateDate(string $date, string $seperator){
     $test_arr  = explode($seperator, $date);
     $year = $test_arr[0];
@@ -28,9 +35,15 @@ function validateDate(string $date, string $seperator){
     return false;
 }
 
-//this method ensures that we have at least three out of four password criteria met//
-//This would far more complicated to achieve using standard regular expressions//
-//charecter one is not working//
+/**
+ * ensures that we have at least three out of four password criteria met
+ * This would far more complicated to achieve using standard regular expressions
+ * charecter one is not working
+ *
+ * @param String   $password  expects password
+ * 
+ * @return Boolean
+ */ 
 function validatePassword(string $password) {
     $count = 0;
  
@@ -54,7 +67,13 @@ function validatePassword(string $password) {
     }
 }
 
-//this method validates a username similar to instagram and twitter//
+/**
+ * validates a username similar to instagram and twitter
+ *
+ * @param String   $username  expects username
+ * 
+ * @return Boolean
+ */ 
 function validateUsername(string $username){
     if(!empty($username)){
         if(preg_match("/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/", $username)){
@@ -64,7 +83,13 @@ function validateUsername(string $username){
     return false;
 }
 
-//this method validates plain text//
+/**
+ * validates plain text
+ *
+ * @param String   $plainText  expects any text
+ * 
+ * @return Boolean
+ */ 
 function validatePlainText(string $plainText){
     if(!empty($plainText)){
         if(preg_match("/^[a-zA-Z ]*$/", $plainText)){
@@ -74,7 +99,13 @@ function validatePlainText(string $plainText){
     return false;
 }
 
-//this method validates alphanumeric input//
+/**
+ * validates alphanumeric input
+ *
+ * @param String   $alphanumeric  expects alphanumeric string
+ * 
+ * @return Boolean
+ */ 
 function validateAlphanumeric(string $alphanumeric){
     if(!empty($alphanumeric)){
         if(preg_match("/^[A-Za-z0-9]*$/", $alphanumeric)){
@@ -84,7 +115,13 @@ function validateAlphanumeric(string $alphanumeric){
     return false;
 }
 
-//validates email address with php filter//
+/**
+ * validates email address with php filter
+ *
+ * @param String   $email  expects email
+ * 
+ * @return Boolean
+ */ 
 function validateEmail(string $email){
     if(!empty($email)){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){

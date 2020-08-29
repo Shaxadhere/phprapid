@@ -16,7 +16,6 @@
 
   <?php
 
-//this method cleans input from user as a plain text//
 /**
  * cleans input from user as a plain text
  *
@@ -32,14 +31,26 @@ function clean_text($string)
 	return $string;
 }
 
-//this method generates random string of given length//
+/**
+ * generates random string of given length
+ *
+ * @param Integer   $length_of_string  expects length of string in numbers
+ * 
+ * @return String random string with length of given length
+ */ 
 function random_strings ($length_of_string) 
 {
     $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
 	return substr(str_shuffle($str_result),0, $length_of_string); 
 } 
 
-//this method returns an array of days after present date with the length provided in params//
+/**
+ * provides dates of days after present date
+ *
+ * @param Integer   $number_of_days  expects number of days
+ * 
+ * @return Array array of dates of days after present date with the length provided in params
+ */ 
 function getNextDays($number_of_days){
     $days   = [];
     $period = new DatePeriod(
@@ -56,6 +67,14 @@ function getNextDays($number_of_days){
 }
 
 //this method calculates months between two dates//
+/**
+ * calculates months between two dates
+ *
+ * @param Date   $start_date  expects start date
+ * @param Date   $end_date  expects end date
+ * 
+ * @return Integer number of days between dates provided in params
+ */ 
 function calcMonths($start_date, $end_date){
     $ts1 = strtotime($start_date);
     $ts2 = strtotime($end_date);
