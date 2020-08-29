@@ -47,27 +47,27 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 ### How To Use:
 
-### :new: trackIP:
+#### :new: trackIP:
 tracks user's ip address and retrieves information out of it
 ```php
 trackIP(ip_address)
 ```
-### :new: getOS:
+#### :new: getOS:
 gets user's operating system
 ```php
 getOS()
 ```
-### :new: getBrowser:
+#### :new: getBrowser:
 gets user's browser name
 ```php
 getBrowser()
 ```
-### :new: verify_phone:
+#### :new: verify_phone:
 verifies phone number and retreives some information out of it
 ```php
 verify_email("13654008480")
 ```
-### :new: verify_email:
+#### :new: verify_email:
 verifies if email is true and valid without sending a mail
 ```php
 verify_email("example@website.com")
