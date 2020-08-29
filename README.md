@@ -13,9 +13,9 @@ a php functions library that helps you to write code effieciently, it helps you 
 ## Methods:
 
 #### Tracking User
-- :boom: trackIP(ip)
-- :boom: getOS()
-- :boom: getBrowser()
+- :new: trackIP(ip)
+- :new: getOS()
+- :new: getBrowser()
 #### SQL
 - insertData(table, fields, values, conn)
 - fetchData(table, conn)
@@ -25,8 +25,8 @@ a php functions library that helps you to write code effieciently, it helps you 
 - checkExistance(table, column_name, value, conn)
 - getLastRow(table, PrimaryKey, conn)
 #### Validation
-- :boom: verify_email(email)
-- :boom: verify_phone(phone_number)
+- :new: verify_email(email)
+- :new: verify_phone(phone_number)
 - validateDate(date, seperator)
 - validatePassword(password)
 - validateUsername(username)
@@ -47,27 +47,27 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 ### How To Use:
 
-### :boom: trackIP:
+### :new: trackIP:
 tracks user's ip address and retrieves information out of it
 ```php
 trackIP(ip_address)
 ```
-### :boom: getOS:
+### :new: getOS:
 gets user's operating system
 ```php
 getOS()
 ```
-### :boom: getBrowser:
+### :new: getBrowser:
 gets user's browser name
 ```php
 getBrowser()
 ```
-### :boom: verify_phone:
+### :new: verify_phone:
 verifies phone number and retreives some information out of it
 ```php
 verify_email("13654008480")
 ```
-### :boom: verify_email:
+### :new: verify_email:
 verifies if email is true and valid without sending a mail
 ```php
 verify_email("example@website.com")
