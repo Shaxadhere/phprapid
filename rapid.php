@@ -16,10 +16,10 @@
 
 <?php
 
-include_once('essentials.php');
-include_once('plays.php');
-include_once('sql.php');
-include_once('validation.php');
+include_once('func/essentials.php');
+include_once('func/plays.php');
+include_once('func/sql.php');
+include_once('func/validation.php');
 
 
 ?>
