@@ -14,9 +14,16 @@
  * Date: 2020-08-23
   -->
 
-<?php
+  <?php
 
 //this method cleans input from user as a plain text//
+/**
+ * cleans input from user as a plain text
+ *
+ * @param String   $string  expects string
+ * 
+ * @return String cleaned string
+ */ 
 function clean_text($string)
 {
 	$string = trim($string);
@@ -61,6 +68,42 @@ function calcMonths($start_date, $end_date){
 
     $diff = (($year2 - $year1) * 12) + ($month2 - $month1);
     return $diff;
+}
+
+
+/**
+ * verifies if email is true and valid without sending a mail
+ *
+ * @param Email   $email  expects email in string
+ * 
+ * @return Array array(valid_format, smtp_check)
+ */ 
+function verify_email($email){
+
+    // set API Access Key
+    $access_key = 'b5cde034b87fed8ef71669277e2dfb5a';
+
+    // Initialize CURL:
+    $ch = curl_init('http://apilayer.net/api/check?access_key='.$access_key.'&email='.$email.'');  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // Store the data:
+    $json = curl_exec($ch);
+    curl_close($ch);
+
+    // Decode JSON response:
+    $res = json_decode($json, true);
+
+    // Access and use your preferred validation result objects
+    $res['format_valid'];
+    $res['smtp_check'];
+
+    $val = array(
+        "valid_format" => $res['format_valid'],
+        "smtp_check" => $res['smtp_check']
+    );
+
+    return $val;
 }
 
 ?>

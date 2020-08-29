@@ -22,4 +22,11 @@ include_once('func/sql.php');
 include_once('func/validation.php');
 
 
+$validate = verify_email($email);
+
+echo $validate['valid_format'];
+echo "<br>";
+echo $validate['smtp_check'];
+
+
 ?>
