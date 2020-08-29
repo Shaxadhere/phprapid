@@ -21,6 +21,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 - checkExistance(table, column_name, value, conn)
 - getLastRow(table, PrimaryKey, conn)
 #### Validation
+- verify_email(email)
 - validateDate(date, seperator)
 - validatePassword(password)
 - validateUsername(username)
@@ -40,6 +41,11 @@ a php functions library that helps you to write code effieciently, it helps you 
 <br />
 
 ### How To Use:
+### verify_email:
+verifies if email is true and valid without sending a mail
+```php
+verify_email("example@website.com")
+```
 #### insertData:
 this method wont return any value it will just insert the data.
 ```php
