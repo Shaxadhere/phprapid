@@ -48,6 +48,9 @@ a php functions library that helps you to write code effieciently, it helps you 
 - getFooter(footerPath)
 - redirectWindow(url)
 - showAlert(msg)
+- generateInsult()
+- generateAdvice()
+- generateQuote()
 
 <br />
 
@@ -247,6 +250,21 @@ redirectWindow("url");
 this method will show alerts with javascript.
 ```php
 showAlert("some text");
+```
+#### generateInsult:
+this method generates random evil insult in english
+```php
+generateInsult();
+```
+#### generateAdvice:
+this method generates random advice in english
+```php
+generateAdvice();
+```
+#### generateQuote:
+this method generates random quote in english
+```php
+generateQuote();
 ```
 
 <br />

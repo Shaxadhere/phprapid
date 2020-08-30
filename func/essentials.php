@@ -350,4 +350,14 @@ function getBrowser() {
     return $browser;
 }
 
+// function countVisits(){
+//     echo 'var xhr = new XMLHttpRequest();
+//     xhr.open("GET", "https://api.countapi.xyz/hit/shexad.netlify.app/visits");
+//     xhr.responseType = "json";
+//     xhr.onload = function() {
+//       alert(this.response.value); 
+//     }
+//     xhr.send();';
+// }
+
 ?>
