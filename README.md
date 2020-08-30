@@ -39,6 +39,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 - validateAlphanumeric(alphanumeric)
 - validateEmail(email)
 #### Other Functions
+- :new: estimate_gender(name)
 - clean_text(string)
 - random_strings(length_of_string)
 - getNextDays(number_of_days)
@@ -76,6 +77,11 @@ verify_email("13654008480")
 verifies if email is true and valid without sending a mail
 ```php
 verify_email("example@website.com")
+```
+#### :new: estimate_gender:
+estimates a gender from a first name
+```php
+estimate_gender("Shehzad")
 ```
 
 #### insertData:

@@ -251,6 +251,31 @@ function urlToPdf($url){
 }
 
 /**
+ * estimates a gender from a first name
+ *
+ * @param String   $name  expects name in string
+ * 
+ * @return String gender name (male, female)
+ */ 
+function estimate_gender($name){
+
+    // Initialize CURL:
+    $ch = curl_init('https://api.genderize.io/?name='.$name.'');  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // Store the data:
+    $json = curl_exec($ch);
+    curl_close($ch);
+
+    // Decode JSON response:
+    $res = json_decode($json, true);
+
+    $val =  $res['gender'];
+
+    return $val;
+}
+
+/**
  * gets user's operating system
  * 
  * @return String operating system name
