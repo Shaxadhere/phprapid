@@ -2,6 +2,7 @@
 <br />
 <br />
 
+### [PHP Rapid][url]
 
 a php functions library that helps you to write code effieciently, it helps you perform database operations, validation, tracking user and some other cool stuff by just calling functions.
 
