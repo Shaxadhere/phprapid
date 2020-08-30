@@ -198,7 +198,7 @@ function trackIP($ip){
     $res = json_decode($json, true);
 
     // Output the "capital" object inside "location"
-    array(
+    $val = array(
         "ip" => $res['ip'],
         "type" => $res['type'],
         "continent_code" => $res['continent_code'],
@@ -218,6 +218,8 @@ function trackIP($ip){
         "calling_code" => $res['location']['calling_code'],
         "is_eu" => $res['location']['is_eu'],
     );
+
+    return $val;
 
 }
 
