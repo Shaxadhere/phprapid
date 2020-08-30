@@ -55,7 +55,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 #### :new: trackIP:
 tracks user's ip address and retrieves information out of it
 ```php
-trackIP(ip_address)
+trackIP('168.212. 226.204')
 ```
 #### :new: getOS:
 gets user's operating system
