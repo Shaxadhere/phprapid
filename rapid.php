@@ -21,6 +21,5 @@ include_once('func/plays.php');
 include_once('func/sql.php');
 include_once('func/validation.php');
  
-urlToPdf('https://shaxad.netlify.app');
 
 ?>
