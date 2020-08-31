@@ -17,7 +17,13 @@
   <?php
 
 /**
- * generates chart
+ * generates chart in png or gif file
+ * @param Integer  $height  expects chart height
+ * @param Integer  $width  expects chart width
+ * @param Array   $data  expects chart data in array
+ * @param Array   $labels  expects chart labels in array
+ * @param Array   $colors  expects chart colors in array
+ * @param Bool   $animate  expects chart animation in boolean
  * 
  * @return String chart image url
  */ 
