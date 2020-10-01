@@ -160,6 +160,46 @@ function checkExistance($table, $column_name, $value, $conn){
     }
 }
 
+//this method verifies values from a specific table by writing mysql query//
+
+/**
+ * fverifies values from a specific table by writing mysql query
+ *
+ * @param String   $table  expects table name
+ * @param Array   $data  expects data in array as array("column1", value1, "column2", "value2"...)
+ * @param mysqli_connect   $conn  expects database connection
+ * 
+ * @return mysqli_query_results
+ */ 
+function verifyValues(string $table, array $data, $conn){
+
+    //breaking data array//
+    $ini = '';
+    $c = 0;
+    $mm = count($data);
+    foreach($data as $item){
+        $c++;
+        if($mm % 2 == 0){
+            $ini .= "`$item`=";
+        }
+        if($mm % 2 != 0){
+            $ini .= "'$item'";
+        }
+        if($mm % 2 != 0 && $c < count($data))
+        {
+            $ini.=' and ';
+        }
+        if($c == count($data)){
+            $ini .= '';
+        }
+        $mm--;
+    }
+ 
+     $query = "SELECT * FROM `$table` WHERE $ini";
+     return mysqli_query($conn, $query);
+ }
+
+
 //this method fetches last row of a specific table by writing mysql query//
 
 /**
