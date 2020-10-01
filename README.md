@@ -27,7 +27,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 - fetchDataById(table, PrimaryKey, id, conn)
 - deleteDataById(table, PrimaryKey, id, conn)
 - editData(table, data, PrimaryKey, id, conn)
-- verifyValues(table, data, conn)
+- :new: verifyValues(table, data, conn)
 - checkExistance(table, column_name, value, conn)
 - getLastRow(table, PrimaryKey, conn)
 #### Validation
