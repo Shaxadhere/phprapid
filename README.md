@@ -27,6 +27,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 - fetchDataById(table, PrimaryKey, id, conn)
 - deleteDataById(table, PrimaryKey, id, conn)
 - editData(table, data, PrimaryKey, id, conn)
+- verifyValues(table, data, conn)
 - checkExistance(table, column_name, value, conn)
 - getLastRow(table, PrimaryKey, conn)
 #### Validation
@@ -146,6 +147,20 @@ editData(
     $primary_key_value,
     $connection
 );
+```
+#### :new: verifyValues:
+this method verifies values from a specific table by writing mysql query
+```php
+verifyValues(
+    "table_name",
+    array(
+        "column_name",
+        "value",
+        "column_name",
+        "value"
+    ),
+    $connection
+)
 ```
 #### checkExistance:
 this method will return true if the value exists or else it will return false.
