@@ -322,11 +322,20 @@ function getBrowser() {
 }
 
 /**
- * estimates a gender from a first name
+ * sends email using PHPMailer
  *
  * @param String   $smtpHost  expects smtp Host in string
+ * @param String   $smtpPort  expects smtp Port in string
+ * @param String   $smtpEmail  expects smtp Email in string
+ * @param String   $smtpPassword  expects smtp Password in string
+ * @param String   $smtpProtocol  expects smtp Protocol in string
+ * @param String   $smtpFrom  expects smtp From Name in string
+ * @param String   $recipient  expects smtp Recipent Email in string
+ * @param Bool   $isHTML  expects bool for if Message is html
+ * @param String   $subject  expects smtp subject in string
+ * @param String   $message  expects smtp Message in string
  * 
- * @return String gender name (male, female)
+ * @return Bool true or false
  */ 
 function sendMail(string $smtpHost, string $smtpPort, string $smtpEmail, string $smtpPassword, string $smtpProtocol, string $smtpFrom, string $recipient, bool $isHTML, string $subject, string $message){
     require '../assets/class.phpmailer.php';
@@ -354,7 +363,16 @@ function sendMail(string $smtpHost, string $smtpPort, string $smtpEmail, string 
     }
 }
 
-
+/**
+ * uploads file for now it only support .jpg, .png, .jpeg, .gif files
+ *
+ * @param FILE   $file  expects $_['File']
+ * @param String $directory expects directory in string
+ * @param Integer $maxSize  expects size in KiloBytes
+ * 
+ * @return Boolean
+ * 
+ */ 
 function uploadFile($file, $directory, $maxSize){
 
     $target_file = $directory . basename($file["name"]);
@@ -365,21 +383,17 @@ function uploadFile($file, $directory, $maxSize){
 
     $check = getimagesize($file["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     }
     else {
-        echo "File is not an image.";
         $uploadOk = 0;
     }
 
     if ($file["size"] > $sizeInBytes) {
-        echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
 
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
     }
 
@@ -387,15 +401,15 @@ function uploadFile($file, $directory, $maxSize){
     $newfilename = round(microtime(true)) . random_strings(50) . '.' . end($temp);
 
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
+        return false;
     }
     else {
         if (move_uploaded_file($file["tmp_name"], $directory . $newfilename)) {
-        echo "The file ". htmlspecialchars( basename( $file["name"])). " has been uploaded.";
+            return true;
         } 
         else {
-        echo "Sorry, there was an error uploading your file.";
-    }
+            return false;
+        }
   }
 
 }

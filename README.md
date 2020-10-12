@@ -17,10 +17,15 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 ## Methods:
 
+#### Essentials:
+- :new: sendMail(smtpHost, smtpPort, smtpEmail, smtpPassword, smtpProtocol, smtpFrom, recipient,isHTML, subject, message)
+- :new: uploadFile(file, directory, maxSize)
+    
+
 #### Tracking User
-- :new: trackIP(ip)
-- :new: getOS()
-- :new: getBrowser()
+- trackIP(ip)
+- getOS()
+- getBrowser()
 #### SQL
 - insertData(table, fields, values, conn)
 - fetchData(table, conn)
@@ -31,8 +36,8 @@ a php functions library that helps you to write code effieciently, it helps you 
 - checkExistance(table, column_name, value, conn)
 - getLastRow(table, PrimaryKey, conn)
 #### Validation
-- :new: verify_email(email)
-- :new: verify_phone(phone_number)
+- verify_email(email)
+- verify_phone(phone_number)
 - validateDate(date, seperator)
 - validatePassword(password)
 - validateUsername(username)
@@ -57,6 +62,31 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 ### How To Use:
 
+#### :new: uploadFile:
+uploads file for now it only support .jpg, .png, .jpeg, .gif files
+```php
+uploadFile(
+    $_File['image'],
+    '/assets/imges',
+    1000
+);
+```
+#### :new: sendMail:
+sends email using PHPMailer
+```php
+sendMail(
+    'your smtp host',
+    'your port',
+    'your smtp email',
+    'your smtp password', 
+    'your smtp protocol',
+    'your sender name',
+    'your recipent email',
+    true,
+    'Send Mail',
+    'your message'
+);
+```
 #### :new: trackIP:
 tracks user's ip address and retrieves information out of it
 ```php
