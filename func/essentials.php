@@ -1,5 +1,5 @@
-<!-- 
- * PHP Rapid
+<?php
+/** 
  * https://github.com/Shaxadhere/phprapid
  *
  * Tested on PHP 7.4
@@ -12,9 +12,7 @@
  * 
  *
  * Date: 2020-08-23
-  -->
-
-<?php
+ */
 
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
@@ -224,33 +222,6 @@ function trackIP($ip){
 }
 
 /**
- * converts url to pdf,
- * api requests are limited, for personal free api token 
- * sign up at https://pdflayer.com/signup?plan=32
- * and modify assets/pdflayer.class.php by entering your access_key
- *
- * @param String   $url  expects phone number in string
- * 
- * @return Array array(valid, country_code, carrier, country_prefix, country_name, line_type)
- */ 
-function urlToPdf($url){
-    include('assets/pdflayer.class.php');
-
-    //Instantiate the class
-    $html2pdf = new pdflayer();
-
-    //set the URL to convert
-    $html2pdf->set_param('document_url','https://pdflayer.com/downloads/invoice.html');
-
-    //start the conversion  
-    $html2pdf->convert();
-
-    //display the PDF file  
-    $html2pdf->download_pdf('document.pdf');
-
-}
-
-/**
  * estimates a gender from a first name
  *
  * @param String   $name  expects name in string
@@ -350,14 +321,84 @@ function getBrowser() {
     return $browser;
 }
 
-// function countVisits(){
-//     echo 'var xhr = new XMLHttpRequest();
-//     xhr.open("GET", "https://api.countapi.xyz/hit/shexad.netlify.app/visits");
-//     xhr.responseType = "json";
-//     xhr.onload = function() {
-//       alert(this.response.value); 
-//     }
-//     xhr.send();';
-// }
+/**
+ * estimates a gender from a first name
+ *
+ * @param String   $smtpHost  expects smtp Host in string
+ * 
+ * @return String gender name (male, female)
+ */ 
+function sendMail(string $smtpHost, string $smtpPort, string $smtpEmail, string $smtpPassword, string $smtpProtocol, string $smtpFrom, string $recipient, bool $isHTML, string $subject, string $message){
+    require '../assets/class.phpmailer.php';
+	$mail = new PHPMailer;
+	$mail->IsSMTP();
+	$mail->Host = $smtpHost;
+	$mail->Port = $smtpPort;
+	$mail->SMTPAuth = true;
+	$mail->Username = $smtpEmail ;
+	$mail->Password = $smtpPassword;
+	$mail->SMTPSecure = $smtpProtocol;
+	$mail->From = $smtpEmail;
+	$mail->FromName = $smtpFrom;
+	$mail->AddAddress($recipient);
+	$mail->WordWrap = 50;
+	$mail->IsHTML($isHTML);
+	$mail->Subject = $subject;
+	$mail->Body = $message;
+	if($mail->Send())
+	{
+		return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+function uploadFile($file, $directory, $maxSize){
+
+    $target_file = $directory . basename($file["name"]);
+
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+    $sizeInBytes = $maxSize * 1000;
+
+    $check = getimagesize($file["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    }
+    else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+
+    if ($file["size"] > $sizeInBytes) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
+    $temp = explode(".", $file["name"]);
+    $newfilename = round(microtime(true)) . random_strings(50) . '.' . end($temp);
+
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    }
+    else {
+        if (move_uploaded_file($file["tmp_name"], $directory . $newfilename)) {
+        echo "The file ". htmlspecialchars( basename( $file["name"])). " has been uploaded.";
+        } 
+        else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+  }
+
+}
+
 
 ?>

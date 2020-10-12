@@ -1,5 +1,5 @@
-<!-- 
- * PHP Rapid
+<?php
+/** 
  * https://github.com/Shaxadhere/phprapid
  *
  * Tested on PHP 7.4
@@ -12,9 +12,7 @@
  * 
  *
  * Date: 2020-08-23
-  -->
-
-<?php
+ */
 
 //this method inserts values in a table by writing mysql query//
 /**
@@ -53,6 +51,45 @@ function insertData(string $table,array $fields,array $values,$conn){
     $query = "insert into `$table` (".$quote.") values (".$valQuote.")";
     mysqli_query($conn, $query);
 }
+
+// //this method inserts values in a table and returns the inserted row by writing mysql query//
+// /**
+//  * inserts values in a table and returns the inserted row by writing mysql query
+//  *
+//  * @param String   $table  expects table name
+//  * @param Array   $fields  expects field names in array
+//  * @param Array   $values  expects values in array
+//  * @param String $PrimaryKey expects primary key column name
+//  * @param mysqli_connect   $conn  expects database connection
+//  * 
+//  */ 
+// function insertAndFetchData(string $table,array $fields,array $values,string $PrimaryKey, $conn){
+//     //breaking fields array//
+//     $quote = '';
+//     $c = 0;
+//     foreach ($fields as $item) {
+//         $quote.="`$item`";
+//         $c++;
+//         if($c < count($fields))
+//         {
+//             $quote.=',';
+//         }
+//     }
+//     //breaking values array//
+//     $valQuote = '';
+//     $valc = 0;
+//     foreach ($values as $item) {
+//         $valQuote.="'$item'";
+//         $valc++;
+//         if($valc < count($fields))
+//         {
+//             $valQuote.=',';
+//         }
+//     }
+//     //bulding query for the fields and values//
+//     $query = "insert into `$table` (".$quote.") values (".$valQuote."); select *from $table where $PrimaryKey=(SELECT LAST_INSERT_ID())";
+//     mysqli_query($conn, $query);
+// }
 
 /**
  * fetches values from a table by writing mysql query
@@ -104,7 +141,7 @@ function deleteDataById(string $table, string $PrimaryKey, $id, $conn){
  * @param String   $table  expects table name
  * @param Array   $data  expects data in array as array("column1", value1, "column2", "value2"...)
  * @param String   $PrimaryKey  expects primary key column name
- * @param String   $id  expects primary key value
+ * @param Integer   $id  expects primary key value
  * @param mysqli_connect   $conn  expects database connection
  * 
  */ 
@@ -131,7 +168,12 @@ function editData(string $table, array $data, string $PrimaryKey, $id, $conn){
         $mm--;
     }
     $query = "UPDATE `$table` SET $ini WHERE $PrimaryKey = $id";
-    mysqli_query($conn, $query);
+    $res = mysqli_query($conn, $query);
+    if (!$res) {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+    }
+    return true;
 }
 
 
@@ -159,6 +201,7 @@ function checkExistance($table, $column_name, $value, $conn){
         return true;
     }
 }
+
 
 //this method verifies values from a specific table by writing mysql query//
 
@@ -195,10 +238,14 @@ function verifyValues(string $table, array $data, $conn){
         $mm--;
     }
  
-     $query = "SELECT * FROM `$table` WHERE $ini";
-     return mysqli_query($conn, $query);
+    $query = "SELECT * FROM `$table` WHERE $ini";
+    $res = mysqli_query($conn, $query);
+    if (!$res) {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+    }
+    return $res;
  }
-
 
 //this method fetches last row of a specific table by writing mysql query//
 
