@@ -35,6 +35,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 - :new: verifyValues(table, data, conn)
 - checkExistance(table, column_name, value, conn)
 - getLastRow(table, PrimaryKey, conn)
+- verifyValues(table, data, conn)
 #### Validation
 - verify_email(email)
 - verify_phone(phone_number)
@@ -87,6 +88,21 @@ sendMail(
     'your message'
 );
 ```
+#### :new: verifyValues:
+verifies values from a specific table by writing mysql query
+```php
+verifyValues(
+    "table_name",
+    array(
+        "field_name",
+        "column_name",
+        "field_name",
+        "column_name"
+    )
+    $conn
+);
+```
+
 #### :new: trackIP:
 tracks user's ip address and retrieves information out of it
 ```php

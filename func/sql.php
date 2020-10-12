@@ -206,7 +206,7 @@ function checkExistance($table, $column_name, $value, $conn){
 //this method verifies values from a specific table by writing mysql query//
 
 /**
- * fverifies values from a specific table by writing mysql query
+ * verifies values from a specific table by writing mysql query
  *
  * @param String   $table  expects table name
  * @param Array   $data  expects data in array as array("column1", value1, "column2", "value2"...)
