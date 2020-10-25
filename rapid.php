@@ -1,20 +1,18 @@
-<!-- 
- * PHP Rapid
- * https://github.com/Shaxadhere/phprapid
- *
- * Tested on PHP 7.4
- *
- * Copyright Shehzad Ahmed 
- * https://shaxad.com
- * https://github.com/Shaxadhere
-
- * Released under the MIT license
- * 
- *
- * Date: 2020-08-23
-  -->
-
 <?php
+
+// * PHP Rapid
+// * https://github.com/Shaxadhere/phprapid
+// *
+// * Tested on PHP 7.4
+// *
+// * Copyright Shehzad Ahmed 
+// * https://shaxad.com
+// * https://github.com/Shaxadhere
+
+// * Released under the MIT license
+// * 
+// *
+// * Date: 2020-08-23
 
 include_once('func/essentials.php');
 include_once('func/plays.php');
