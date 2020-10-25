@@ -19,7 +19,7 @@ a php functions library that helps you to write code effieciently, it helps you 
 
 #### Essentials:
 - :new: sendMail(smtpHost, smtpPort, smtpEmail, smtpPassword, smtpProtocol, smtpFrom, recipient,isHTML, subject, message)
-- :new: uploadFile(file, directory, maxSize)
+- :new: uploadFile(file, saveAs, directory, maxSize)
     
 
 #### Tracking User
@@ -68,6 +68,7 @@ uploads file for now it only support .jpg, .png, .jpeg, .gif files
 ```php
 uploadFile(
     $_File['image'],
+    "myfile.jpeg",
     '/assets/imges',
     1000
 );

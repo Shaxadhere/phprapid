@@ -366,14 +366,15 @@ function sendMail(string $smtpHost, string $smtpPort, string $smtpEmail, string 
 /**
  * uploads file for now it only support .jpg, .png, .jpeg, .gif files
  *
- * @param FILE   $file  expects $_['File']
+ * @param FILES   $file  expects $_FILES
+ * @param String $saveAs expects file name to be saved as
  * @param String $directory expects directory in string
  * @param Integer $maxSize  expects size in KiloBytes
  * 
  * @return Boolean
  * 
  */ 
-function uploadFile($file, $saveAs, $directory, $maxSize){
+function uploadFile($file, string $saveAs, string $directory, int $maxSize){
 
     $target_file = $directory . basename($file["name"]);
 
