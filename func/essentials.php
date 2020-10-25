@@ -373,7 +373,7 @@ function sendMail(string $smtpHost, string $smtpPort, string $smtpEmail, string 
  * @return Boolean
  * 
  */ 
-function uploadFile($file, $directory, $maxSize){
+function uploadFile($file, $saveAs, $directory, $maxSize){
 
     $target_file = $directory . basename($file["name"]);
 
@@ -398,7 +398,7 @@ function uploadFile($file, $directory, $maxSize){
     }
 
     $temp = explode(".", $file["name"]);
-    $newfilename = round(microtime(true)) . random_strings(50) . '.' . end($temp);
+    $newfilename = $saveAs . '.' . end($temp);
 
     if ($uploadOk == 0) {
         return false;
