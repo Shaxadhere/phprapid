@@ -188,7 +188,7 @@ function editData(string $table, array $data, string $PrimaryKey, $id, $conn){
  * @return Boolean
  */ 
 function checkExistance($table, $column_name, $value, $conn){
-    $res = mysqli_query($conn, "select count($column_name) from $table where $column_name = $value");
+    $res = mysqli_query($conn, "select count($column_name) from $table where $column_name = '$value'");
     if (!$res) {
         printf("Error: %s\n", mysqli_error($conn));
         exit();
