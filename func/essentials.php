@@ -5,10 +5,10 @@
  * Tested on PHP 7.4
  *
  * Copyright Shehzad Ahmed 
- * https://shaxad.com
+ * https://shaxad.netlify.app
  * https://github.com/Shaxadhere
 
- * Released under the MIT license
+ * Released under the GNU GENERAL PUBLIC LICENSE
  * 
  *
  * Date: 2020-08-23
