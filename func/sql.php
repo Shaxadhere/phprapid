@@ -256,15 +256,15 @@ function verifyValues(string $table, array $data, $conn){
  * @param String   $PrimaryKey  expects primary key column name
  * @param mysqli_connect   $conn  expects database connection
  * 
- * @return mysqli_query_results
+ * @return Array
  */ 
 function getLastRow($table, $PrimaryKey, $conn){
-    $res = mysqli_query($conn, "SELECT $PrimaryKey FROM $table ORDER BY $PrimaryKey DESC LIMIT 1");
+    $res = mysqli_query($conn, "SELECT * FROM $table ORDER BY $PrimaryKey DESC LIMIT 1");
     if (!$res) {
         printf("Error: %s\n", mysqli_error($conn));
         exit();
     }
-    return $res;
+    return mysqli_fetch_array($res);
     
 }
 
