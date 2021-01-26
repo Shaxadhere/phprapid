@@ -1,5 +1,5 @@
 [<img align="left" alt="Shexadd | Twitter" src="http://shaxad.com/assets/img/rapid_Original.jpg" width="16%" />][url]
-[<img align="left" alt="License" src="https://img.shields.io/badge/license-GPL-blue" width="16%" />][url]
+[<img align="left" alt="License" src="https://img.shields.io/badge/license-GPL-blue" />][url]
 <br />
 <br />
 
