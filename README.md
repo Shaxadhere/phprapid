@@ -3,7 +3,8 @@
 <br />
 <br />
 
-### [PHP Rapid][url] <img align="left" alt="License" src="https://img.shields.io/badge/license-GPL-blue" />
+### [PHP Rapid][url]
+<img align="left" alt="License" src="https://img.shields.io/badge/license-GPL-blue" />
 
 a php functions library that helps you to write code effieciently, it helps you perform database operations, validation, tracking user and some other cool stuff by just calling functions.
 
