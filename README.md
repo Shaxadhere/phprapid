@@ -1,4 +1,5 @@
 [<img align="left" alt="Shexadd | Twitter" src="http://shaxad.com/assets/img/rapid_Original.jpg" width="16%" />][url]
+[img src="https://img.shields.io/badge/license-GPL-blue"/>[license]
 <br />
 <br />
 
