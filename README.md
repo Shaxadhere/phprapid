@@ -1,4 +1,4 @@
-[<img align="left" alt="Shexadd | Twitter" src="http://shaxad.com/assets/img/rapid_Original.jpg" width="16%" />][url]
+[<img align="left" alt="Shexadd | Twitter" src="https://repository-images.githubusercontent.com/289745670/d00eaa80-29df-11eb-97c5-cf5f6e6fa53a" width="16%" />][url]
 <br />
 <br />
 
